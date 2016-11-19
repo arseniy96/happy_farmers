@@ -40,3 +40,29 @@
     }
   }
 }
+
+.bg-image-reg {
+  min-height: 90vh;
+  min-width: 100%;
+  background-size: 100% 100%;
+  background-image: image-url('background_sign_up.jpg');
+  position: fixed;
+  z-index: -1000;
+}
+
+.main {
+  text-align: center;
+  color: #fff;
+}
+
+.form-user {
+  text-align: center;
+}
+
+.form-field {
+  min-height: 40px;
+  max-width: 30%;
+  margin-bottom: 15px;
+  margin-left: 35%;
+}
+

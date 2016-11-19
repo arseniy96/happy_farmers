@@ -1,0 +1,15 @@
+<p>
+  <%= f.label 'Название' %><br/>
+  <%= f.text_field :name, class: "form-control", style: "width: 30%;" %>
+</p>
+<p>
+  <%= f.label 'Описание' %><br/>
+  <%= f.text_area :description, class: "form-control", style: "width: 30%; height: 80px" %>
+</p>
+<p>
+  <%= f.label 'Цена' %><br/>
+  <%= f.text_field :price, class: "form-control", style: "width: 20%;" %>
+</p>
+<p>
+  <%= f.submit class: "btn btn-success"  %>
+</p>

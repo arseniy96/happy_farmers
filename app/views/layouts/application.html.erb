@@ -32,7 +32,7 @@
       <div class="bg-image-index"></div>
     <% elsif current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
       <div class="bg-image-reg"></div>
-    <% elsif current_page?(user_path) %>
+    <% elsif current_page?(user_path(current_user)) %>
       <div class="bg-image-cabinet"></div>
     <% end %>
 

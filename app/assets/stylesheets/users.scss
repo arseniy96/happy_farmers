@@ -1,3 +1,61 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bg-image-cabinet {
+  min-height: 90vh;
+  min-width: 100%;
+  background-size: 100% 100%;
+  background-image: image-url('background_cabinet.jpg');
+  position: fixed;
+  z-index: -1000;
+}
+
+.user-cabinet {
+  margin: 30px;
+}
+
+.avatar {
+  float: left;
+}
+
+.username {
+  text-align: left;
+  margin-left: 350px;
+}
+
+.add-product {
+  display: block;
+  margin-top: 150px;
+  margin-bottom: 30px;
+  text-align: center;
+  h2 {
+    margin-right: 300px;
+  }
+}
+
+.products {
+  margin: 30px;
+}
+
+.img-product {
+  float: left;
+  margin-bottom: 30px;
+}
+
+.about-product {
+  text-align: left;
+  margin-left: 200px;
+}
+
+.about-product h2 {
+  font-size: 32px;
+}
+
+.about-product h3 {
+  font-size: 24px;
+}
+
+.price-field::after {
+  content: 'РУБ';
+}

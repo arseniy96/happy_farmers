@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.where(type != current_user.type)
+    if current_user.position == 'Клиент'
+      @users = User.where(position: 'Фермер')
+    else
+      @users = User.where(position: 'Клиент')
+    end
   end
 
   def show

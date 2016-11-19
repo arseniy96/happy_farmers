@@ -1,6 +1,11 @@
+<% if current_user.position == 'Фермер' %>
+    <h1>Клиенты:</h1>
+<% elsif current_user.position == 'Клиент' %>
+    <h1>Фермеры:</h1>
+<% end %>
 <div>
   <% @users.each do |user| %>
     <h2><%= user.username %></h2>
-    <h3><%= user.type %></h3><hr/>
+    <h3><%= user.position %></h3><hr/>
   <% end %>
 </div>

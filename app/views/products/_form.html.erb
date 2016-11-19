@@ -11,5 +11,9 @@
   <%= f.text_field :price, class: "form-control", style: "width: 20%;" %>
 </p>
 <p>
+  <%= f.label 'Категория' %><br/>
+  <%= f.collection_select :category_id, @category, :id, :title, {}, {class: "form-control", style: "width: 30%;"} %>
+</p>
+<p>
   <%= f.submit class: "btn btn-success"  %>
 </p>

@@ -7,11 +7,13 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @category = Category.all
     render_403 if current_user.position != 'Фермер'
     @product = Product.new
   end
 
   def edit
+    @category = Category.all
     render_403 if current_user.position != 'Фермер'
   end
 
@@ -42,7 +44,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price)
+    params.require(:product).permit(:name, :description, :price, :category_id)
   end
 
   def set_product

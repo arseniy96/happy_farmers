@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def downvote
     @user = User.find(params[:id])
     @user.vote = @user.vote - 1
+    @user.save
     redirect_to action: :show
   end
 

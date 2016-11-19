@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :users, only: [:show, :index] do
-    get upvote, on: :member
-    get downvote, on: :member
+    get :upvote, on: :member
+    get :downvote, on: :member
   end
 
   resources :products

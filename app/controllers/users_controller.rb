@@ -12,4 +12,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def upvote
+    @user = User.find(params[:id])
+    @user.increment!(:vote)
+    redirect_to action: :show
+  end
+
+  def downvote
+    @user = User.find(params[:id])
+    @user.vote = @user.vote - 1
+    redirect_to action: :show
+  end
+
+
 end

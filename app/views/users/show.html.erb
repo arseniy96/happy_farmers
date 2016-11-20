@@ -10,9 +10,14 @@
     </div>
 
     <% if current_user != @user %>
-        <%= form_for @chat do |f| %>
-            <%= f.submit "Начать чат", class: 'btn btn-primary' %>
-        <% end %>
+      <%= link_to 'Вступить в чат', controller: 'chats', action: 'start_chat',
+                  id: @user %>
+    <% elsif Chat.find(current_user.id) != nil? %>
+        <%= link_to 'Войти в чат', chat_path(Chat.find(current_user.id)) %>
+    <% else %>
+      <%= form_for @chat do |f| %>
+        <%= f.submit "Создать чат", class: 'btn btn-primary' %>
+      <% end %>
     <% end %>
 
     <% if @user.position == 'Фермер' %>

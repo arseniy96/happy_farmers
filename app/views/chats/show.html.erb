@@ -3,11 +3,11 @@
 </div>
 
 <%= form_for @message, url: '#' do |f| %>
-    <%= hidden_field_tag 'chat_id', @chat.id %>
-    <p>
-      <%= f.text_area :text, class: "form-control", style: "width: 80%; height: 80px" %>
-    </p>
-    <p>
-      <%= f.submit 'Send Message', class: "btn btn-danger" %>
-    </p>
+    <div class="form-group">
+      <%= f.label :text %>
+      <%= f.text_area :text, class: 'form-control', style: "width: 80%; height: 80px" %>
+      <small class="text-muted">From 2 to 1000 characters</small>
+    </div>
+
+    <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
 <% end %>

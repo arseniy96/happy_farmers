@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :products
 
-  resources :chats, only: [:new, :create, :show, :index]
+  resources :chats, only: [:new, :create, :show, :index] do
+    get :start_chat, on: :member
+  end
 
   mount ActionCable.server => '/cable'
 

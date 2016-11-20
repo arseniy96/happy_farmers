@@ -10,15 +10,15 @@
       <h3>Рейтинг: <%= @user.vote %> <%= link_to '+', upvote_user_path(@user) %>|<%= link_to '-', downvote_user_path(@user) %></h3>
     </div>
 
-    <% if current_user != @user %>
-      <%= link_to 'Вступить в чат', controller: 'chats', action: 'start_chat',
-                  id: @user %>
-    <% elsif (Chat.where(id: current_user.id)) == nil? %>
-        <%= link_to 'Войти в чат', chat_path(Chat.where(id: current_user.id)) %>
-    <% else %>
+
+    <% if current_user == @user && !(defined?(Chat.find(current_user.id))) %>
       <%= form_for @chat do |f| %>
-        <%= f.submit "Создать чат", class: 'btn btn-primary' %>
+          <%= f.submit "Создать чат", class: 'btn btn-primary' %>
       <% end %>
+    <% elsif current_user != @user %>
+        <%= link_to 'Вступить в чат', controller: 'chats', action: 'start_chat', id: @user %>
+    <% else %>
+        <%= link_to 'Войти в чат', chat_path(current_user.id) %>
     <% end %>
 
     <% if @user.position == 'Фермер' %>

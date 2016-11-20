@@ -11,5 +11,8 @@
   <%= f.collection_select :category_id, Category.all, :id, :title, {}, {class: "form-control form-field price-field", style: "width: 30%;"} %>
 </p>
 <p>
+  <%= f.file_field :icon, class: "form-field" %>
+</p>
+<p>
   <%= f.submit 'Создать', class: "btn btn-success"  %>
 </p>

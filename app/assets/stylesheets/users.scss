@@ -21,7 +21,7 @@
 
 .username {
   text-align: left;
-  margin-left: 350px;
+  margin-left: 370px;
 }
 
 .add-product {
@@ -35,27 +35,21 @@
 }
 
 .products {
-  margin: 30px;
+  margin-top: 50px;
 }
 
 .img-product {
   float: left;
-  margin-bottom: 30px;
+  margin: 15px 10px;
 }
 
 .about-product {
   text-align: left;
-  margin-left: 200px;
-}
-
-.about-product h2 {
-  font-size: 32px;
-}
-
-.about-product h3 {
-  font-size: 24px;
-}
-
-.price-field::after {
-  content: 'РУБ';
+  padding-left: 50px;
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 24px;
+  }
 }

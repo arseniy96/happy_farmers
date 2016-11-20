@@ -8,22 +8,33 @@
       <h3>Статус: <%= @user.position %></h3>
       <h3>Рейтинг: <%= @user.vote %> <%= link_to '+', upvote_user_path(@user) %>|<%= link_to '-', downvote_user_path(@user) %></h3>
     </div>
-    <div class="add-product">
-      <h2>Добавить продукт:</h2>
-      <%= form_for current_user.products.new do |f| %>
-        <%= render partial: 'products/form', locals: {f: f} %>
-      <% end %>
-    </div>
-    <div class="products">
-      <% current_user.products.each do |product| %>
-        <div class="img-product">
 
-        </div>
-        <div class="about-product">
-          <h2><%= product.name %></h2>
-          <p><%= product.description %></p>
+    <% if @user.position == 'Фермер' %>
+      <% if @user == current_user %>
+        <div class="add-product">
+          <h2>Добавить продукт:</h2>
+          <%= form_for current_user.products.new do |f| %>
+              <%= render partial: 'products/form', locals: {f: f} %>
+          <% end %>
         </div>
       <% end %>
-    </div>
+      <div class="products">
+        <h2>Продукты</h2>
+        <table>
+          <% @user.products.each do |product| %>
+            <tr>
+              <td class="img-product">
+                <%= image_tag product.icon.url(:thumb) %>
+              </td>
+              <td class="about-product">
+                <h2><%= product.name %></h2>
+                <p><%= product.description %></p>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    <% end %>
+
   </div>
 </div>

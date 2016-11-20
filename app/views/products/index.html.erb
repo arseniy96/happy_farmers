@@ -1,6 +1,11 @@
 <h1>Продукты:</h1>
 <% @products.each do |product| %>
-  <h3><%= product.name %></h3>
-  <p><%= product.description %></p>
-  <p>Цена: <%= product.price %></p>
+  <%= link_to user_path(User.find(product.user_id)) do %>
+    <div class="row product">
+      <div class="col-md-2"><%= image_tag product.icon.url(:thumb) %></div>
+      <div class="col-md-4"><h2><%= product.name %></h2></div>
+      <div class="col-md-4"><h4><%= product.description %></h4></div>
+      <div class="col-md-2"><h2>Цена: <%= product.price %></h2></div>
+    </div>
+  <% end %>
 <% end %>

@@ -1,3 +1,22 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product {
+  min-width: 80%;
+  min-height: 30px;
+  background-color: rgba(45, 255, 45, 0.4);
+  padding: 10px 25px;
+  margin: 7px;
+  color: #444;
+  border-radius: 5px;
+  h2 h4 {
+    text-align: left;
+  }
+}
+
+.product:hover {
+  text-decoration: none;
+  background-color: rgba(40, 210, 40, 0.5);
+  color: #222;
+}

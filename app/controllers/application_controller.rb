@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:position])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:location])
   end
 
   private
